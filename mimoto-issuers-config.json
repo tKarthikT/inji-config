@@ -76,6 +76,173 @@
       "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
       "qr_code_type": "OnlineSharing",
       "enabled": "true"
-    }
+    },
+  {
+      "issuer_id": "Farmer",
+      "credential_issuer": "Farmer",
+      "credential_issuer_host": "https://injicertify-farmer.dst-stage.mosip.net/v1/certify/issuance",
+      "display": [
+        {
+          "name": "MosiLand Agriculture Department",
+          "logo": {
+            "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+            "alt_text": "mosip-logo"
+          },
+          "title": "MosiLand Agriculture Department",
+          "description": "Download Farmer VC",
+          "language": "en"
+        },
+        {
+         "name": "قسم الزراعة في موسيلاند",
+      "logo": {
+        "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+        "alt_text": "mosip-logo"
+      },
+      "title": "قسم الزراعة في موسيلاند",
+      "description": "تحميل شهادة المزارع",
+      "language": "ar"
+        },
+        {
+          "name": "मोसिलैंड कृषि विभाग",
+      "logo": {
+        "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+        "alt_text": "mosip-logo"
+      },
+      "title": "मोसिलैंड कृषि विभाग",
+      "description": "किसान वीसी डाउनलोड करें",
+      "language": "hi"
+        },
+        {
+          "name": "ಮೋಷಿಲ್ಯಾಂಡ್ ಕೃಷಿ ಇಲಾಖೆ",
+      "logo": {
+        "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+        "alt_text": "mosip-logo"
+      },
+      "title": "ಮೋಷಿಲ್ಯಾಂಡ್ ಕೃಷಿ ಇಲಾಖೆ",
+      "description": "ರೈತ VC ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+      "language": "kn"
+        },
+        {
+         "name": "மோசிலாண்ட் வேளாண்மை துறை",
+      "logo": {
+        "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+        "alt_text": "mosip-logo"
+      },
+      "title": "மோசிலாண்ட் வேளாண்மை துறை",
+      "description": "விவசாயி VC ஐ பதிவிறக்கவும்",
+      "language": "ta"
+        },
+        {
+         "name": "Kagawaran ng Agrikultura ng MosiLand",
+      "logo": {
+        "url": "https://mosip.github.io/inji-config/logos/agro-vertias-logo.png",
+        "alt_text": "mosip-logo"
+      },
+      "title": "Kagawaran ng Agrikultura ng MosiLand",
+      "description": "I-download ang Farmer VC",
+      "language": "fil"
+        }
+      ],
+       "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.mosipid.partner.clientid}",
+      "client_alias": "mpartner-default-mimoto-oidc",
+      "wellknown_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "token_endpoint": "https://${mosip.api.public.host}/v1/mimoto/get-token/Farmer",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "qr_code_type": "OnlineSharing",
+      "enabled": "true"
+    },
+     {
+      "issuer_id": "MosipTax",
+      "credential_issuer": "MosipTax",
+      "credential_issuer_host": "https://${mosip.injicertify.tax.host}",
+      "display": [
+        {
+          "name": "MosiLand Tax Department",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "mosip-logo"
+          },
+          "title": "MosiLand Tax Department",
+          "description": "Download MosiLand Tax Credential",
+          "language": "en"
+        },
+        {
+          "name": "मोसीलैंड कर विभाग",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "मोसिप-लोगो"
+          },
+          "title": "मोसीलैंड कर विभाग",
+          "description": "मोसीलैंड कर प्रमाणपत्र डाउनलोड करें",
+          "language": "hi"
+        },
+        {
+          "name": "دائرة الضرائب في موسيلاند",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "شعار موسيب"
+          },
+          "title": "دائرة الضرائب في موسيلاند",
+          "description": "قم بتنزيل شهادة الضرائب لموسيلاند",
+          "language": "ar"
+        },
+        {
+          "name": "ಮೋಸಿಲ್ಯಾಂಡ್ ತೆರಿಗೆ ಇಲಾಖೆ",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "ಮೋಸಿಪ್-ಲೋಗೋ"
+          },
+          "title": "ಮೋಸಿಲ್ಯಾಂಡ್ ತೆರಿಗೆ ಇಲಾಖೆ",
+          "description": "ಮೋಸಿಲ್ಯಾಂಡ್ ತೆರಿಗೆ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+          "language": "kn"
+        },
+        {
+          "name": "மோசிலேண்ட் வரித்துறை",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "மோசிப்-லோகோ"
+          },
+          "title": "மோசிலேண்ட் வரித்துறை",
+          "description": "மோசிலேண்ட் வரி சான்றிதழைப் பதிவிறக்கவும்",
+          "language": "ta"
+        },
+        {
+          "name": "Departamento ng Buwis ng MosiLand",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "mosip-logo"
+          },
+          "title": "Departamento ng Buwis ng MosiLand",
+          "description": "I-download ang Tax Credential ng MosiLand",
+          "language": "fil"
+        },
+        {
+          "name": "Département des Impôts de MosiLand",
+          "logo": {
+            "url": "https://durga0417.github.io/logo/TaxLogo.png",
+            "alt_text": "logo-mosip"
+          },
+          "title": "Département des Impôts de MosiLand",
+          "description": "Télécharger l’attestation fiscale de MosiLand",
+          "language": "fr"
+        }
+      ],
+      "protocol": "OpenId4VCI",
+      "client_id": "${mimoto.oidc.mosipid.partner.clientid}",
+      "client_alias": "mpartner-default-mimoto-oidc",
+      "wellknown_endpoint": "https://${mosip.injicertify.host}/v1/certify/issuance/.well-known/openid-credential-issuer",
+      "redirect_uri": "io.mosip.residentapp.inji://oauthredirect",
+      "token_endpoint": "https://${mosip.api.public.host}/v1/mimoto/get-token/MosipTax",
+      "authorization_audience": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "proxy_token_endpoint": "https://${mosip.esignet.host}/v1/esignet/oauth/v2/token",
+      "qr_code_type": "OnlineSharing",
+      "enabled": "true"
+    }	
   ]
 }
+
+
+  
