@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FARMER CREDENTIAL</title>
+  <style>
+    html { -webkit-print-color-adjust: exact; }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .outer-table {
+      width: 700px;
+      border: 1px solid gray;
+      border-radius: 20px;
+      background-color: #fff;
+      background-image: url('https://mosip.github.io/inji-config/vcbackground/default-background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      margin: 0 auto 30px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin: 10px;
+      object-fit: contain;
+    }
+
+    .column {
+      width: 50%;
+      padding: 20px;
+      vertical-align: top;
+    }
+
+    .label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+
+    .value {
+      font-size: 15px;
+      padding-left: 10px;
+      color: #000;
+    }
+
+    .credential-note {
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color:#2e7d32;
+      background-color: rgba(200,200,200,0.1);
+    }
+
+    .credential-note ol {
+      margin: 5px 0 0 15px;
+      padding: 0;
+    }
+
+    .credential-note li {
+      margin-bottom: 4px;
+    }
+
+    td {
+      vertical-align: top;
+      padding-top: 5px;
+    }
+
+    .header-title {
+      font-size: 24px;
+      color: #2e7d32;
+      margin: 0;
+      text-align: center;
+      flex: 1;
+    }
+
+    .header-row {
+      background-color:#fff8dc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .photo, .qr {
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 5px;
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+
+    .photo img, .qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- FRONT SIDE -->
+<table class="outer-table">
+  <thead>
+    <tr>
+      <th colspan="3">
+        <div class="header-row">
+          <!-- Issuer Logo -->
+          <img src="$logoUrl" alt="Issuer Logo" class="logo" />
+          <!-- Title -->
+          <div class="header-title">FARMER CREDENTIAL</div>
+          <!-- MOSIP Logo -->
+          <img src="https://mosip.github.io/inji-config/logos/mosipid-logo.png" alt="MOSIP Logo" class="logo" />
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <table style="width:100%;padding:10px;">
+          <tr>
+            <td width="35%">
+              <div class="photo" style="height:150px;width:120px;">
+                #if(!$face)
+                <img src="https://mosip.github.io/inji-config/logos/user-icon.png" alt="Photo" style="width:100%;height:100%;object-fit:cover;">
+                #else
+                <img src="$face" alt="Photo" style="width:100%;height:100%;object-fit:cover;">
+                #end
+              </div>
+            </td>
+            <td width="65%" style="padding-left:10px;">
+              <table style="width:100%;">
+                <tr>
+                   <td class="label">Farmer ID:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('farmer_id'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">Full Name:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('fullname'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">Gender:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('gender'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">Date of Birth:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('date_of_birth'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">ID Type:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('id_type'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">Issued On:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('issued_on'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label">Expired On:</td>
+                  <td class="value">
+                    #set($data=$rowProperties.get('expired_on'))
+                    #if($data && $data.size()>0) #foreach($entry in $data.entrySet()) $entry.value #end #end
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- BACK SIDE -->
+<table class="outer-table">
+  <tbody>
+    <tr>
+      <td class="column">
+        <div class="credential-note" style="margin: 0;">
+          <strong>Instructions:</strong>
+          <ol>
+            <li>This is a Farmer Credential.</li>
+            <li>It serves as proof of farmer identity.</li>
+            <li>This document is electronically generated.</li>
+            <li>Always verify authenticity using QR code.</li>
+            <li>Ensure details are kept up to date.</li>
+          </ol>
+        </div>
+      </td>
+      <td class="column" style="background:rgba(232,245,233,.7);">
+        <div style="margin-top:10px;">
+          <img class="photo" src="data:image/png;base64,$qrCodeImage"
+               alt="QR Code" style="border:1px solid #003366;height:250px;width:100%;border-radius:10px;">
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
